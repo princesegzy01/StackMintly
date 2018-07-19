@@ -19,7 +19,7 @@ import time
 
 import currency_detector
 import serial_number_predictor
-
+import utils
 
 
 #Sort Contours on the basis of their x-axis coordinates in ascending order
@@ -270,8 +270,10 @@ def predictSingleImage(ml_output, img) :
     cv2.waitKey(0)
     '''
 
-
-    classifier = load_model("serial_number_detector.h5")
+    
+    train_data = "train_data.ell"
+    _, serial_data_file_name, = utils.returnTrainDataFIleName(train_data)
+    classifier = load_model(serial_data_file_name)
 
     result = []
     #To be considered for Use

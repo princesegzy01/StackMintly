@@ -7,6 +7,7 @@ from keras.layers.core import Activation
 from keras.models import load_model
 from keras.preprocessing import image
 import numpy as np
+import zipfile
 
 import time
 import sys
@@ -76,7 +77,7 @@ def trainConvNet():
 #for img in sorted(os.listdir("result_chops")):
     #test_image = image.load_img('result_chops/6.png', target_size = (28, 28))
    
-def git(classifier, test_image):
+def customDigitPredictor(classifier, test_image):
     
     #if img[-3:] != "png":
     #    continue

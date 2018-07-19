@@ -8,7 +8,8 @@ import time
 from keras.models import load_model
 from keras.preprocessing import image
 import numpy as np
-
+import zipfile
+import utils
 
 
 def trainCurrencyDetector():
@@ -77,7 +78,9 @@ def trainCurrencyDetector():
 
 def predictCurrency(test_image):
     
-    clf = load_model("currency_detector.h5")
+    train_data = "train_data.ell"
+    currency_data_file_name, _ = utils.returnTrainDataFIleName(train_data)
+    clf = load_model(currency_data_file_name)
 
     test_image = image.img_to_array(test_image)
     test_image = np.expand_dims(test_image, axis = 0)
