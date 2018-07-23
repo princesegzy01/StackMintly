@@ -76,9 +76,9 @@ def trainCurrencyDetector():
 #trainCurrencyDetector()
 #print("Done Training Currency")
 
-def predictCurrency(test_image):
+def predictCurrency(train_data, test_image):
     
-    train_data = "train_data.ell"
+    #train_data = "train_data.ell"
     currency_data_file_name, _ = utils.returnTrainDataFIleName(train_data)
     clf = load_model(currency_data_file_name)
 
